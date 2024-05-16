@@ -1,8 +1,6 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
-
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+> **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
 ## Step 1: Start the Metro Server
 
@@ -17,10 +15,6 @@ npm start
 # OR using Yarn
 yarn start
 ```
-
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
 
 ### For Android
 
@@ -42,38 +36,39 @@ npm run ios
 yarn ios
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## Crear proyecto de Firebase
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+Ingresar en la consola de firebase, agregar un nuevo proyecto.
 
-## Step 3: Modifying your App
+Una vez creado el proyecto, agregar nueva app para android y para iOS.
 
-Now that you have successfully run the app, let's modify it.
+Tener en cuenta el nombre del paquete (android) y del bundleId (iOS), debe coincidir con el del proyecto.
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+## Paso 1: Agregar firebase
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+```bash
+npm install --save @react-native-firebase/app
+cd ios && pod install
+```
 
-## Congratulations! :tada:
+Seguir la documentación https://rnfirebase.io/
 
-You've successfully run and modified your React Native App. :partying_face:
+## Paso 2: Agregar Módulo de Notificaciones
 
-### Now what?
+```bash
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+npm install @react-native-firebase/messaging
+cd ios/ && pod install
+```
 
-# Troubleshooting
+Seguir la documentación https://rnfirebase.io/messaging/usage
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+### Referencias
 
-# Learn More
+-   [Firebase RN Config](https://rnfirebase.io)
+-   [Set push in iOS](https://rnfirebase.io/messaging/usage/ios-setup) - a **guided tour basics**.
+-   [App Icon Generator](https://www.appicon.co/)
 
-To learn more about React Native, take a look at the following resources:
+### Configurar icono push Notificaciones
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Se puede usar [Generador Icono](https://www.appicon.co) para generar los iconos para android y para iOS.
